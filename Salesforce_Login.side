@@ -1,0 +1,90 @@
+{
+  "id": "12345-abcde-67890",
+  "version": "2.0",
+  "name": "Salesforce_Login",
+  "url": "https://login.salesforce.com",
+  "tests": [
+    {
+      "id": "test-001",
+      "name": "LoginAndNavigateToAccounts",
+      "commands": [
+        {
+          "id": "1",
+          "comment": "Open Salesforce login page",
+          "command": "open",
+          "target": "https://login.salesforce.com",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2",
+          "comment": "Type username",
+          "command": "type",
+          "target": "id=username",
+          "targets": [],
+          "value": "sheetu.chougule-dkne@force.com"
+        },
+        {
+          "id": "3",
+          "comment": "Type password",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "dkne@2025#"
+        },
+        {
+          "id": "4",
+          "comment": "Click Login",
+          "command": "click",
+          "target": "id=Login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "5",
+          "comment": "Wait for App Launcher",
+          "command": "waitForElementVisible",
+          "target": "css=div.slds-icon-waffle",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6",
+          "comment": "Click App Launcher",
+          "command": "click",
+          "target": "css=div.slds-icon-waffle",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7",
+          "comment": "Type 'Accounts' in search",
+          "command": "type",
+          "target": "css=input.slds-input",
+          "targets": [],
+          "value": "Accounts"
+        },
+        {
+          "id": "8",
+          "comment": "Click Accounts link",
+          "command": "click",
+          "target": "linkText=Accounts",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "suite-001",
+      "name": "Salesforce_Login_Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": ["test-001"]
+    }
+  ],
+  "urls": ["https://login.salesforce.com"],
+  "plugins": []
+}
